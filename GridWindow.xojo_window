@@ -24,7 +24,7 @@ Begin Window GridWindow
    Placement       =   0
    Resizeable      =   True
    Title           =   "Grid Designer"
-   Visible         =   True
+   Visible         =   False
    Width           =   600
    Begin RadioButton SymmetryRadioButton
       AutoDeactivate  =   True
