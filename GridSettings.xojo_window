@@ -1,5 +1,5 @@
 #tag Window
-Begin Window GridWindow
+Begin Window GridSettings
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
    CloseButton     =   True
@@ -9,7 +9,7 @@ Begin Window GridWindow
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   400
+   Height          =   319
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -23,9 +23,9 @@ Begin Window GridWindow
    MinWidth        =   64
    Placement       =   0
    Resizeable      =   True
-   Title           =   "Grid Designer"
+   Title           =   "Grid"
    Visible         =   False
-   Width           =   600
+   Width           =   140
    Begin RadioButton SymmetryRadioButton
       AutoDeactivate  =   True
       Bold            =   False
@@ -36,7 +36,7 @@ Begin Window GridWindow
       Index           =   0
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -49,7 +49,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   56
+      Top             =   55
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -66,7 +66,7 @@ Begin Window GridWindow
       Index           =   1
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -79,7 +79,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   88
+      Top             =   87
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -96,7 +96,7 @@ Begin Window GridWindow
       Index           =   2
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -109,7 +109,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   120
+      Top             =   119
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -126,7 +126,7 @@ Begin Window GridWindow
       Index           =   3
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -139,7 +139,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   152
+      Top             =   151
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -156,7 +156,7 @@ Begin Window GridWindow
       Index           =   4
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -169,7 +169,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   184
+      Top             =   183
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -186,7 +186,7 @@ Begin Window GridWindow
       Index           =   5
       InitialParent   =   ""
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -199,7 +199,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   216
+      Top             =   215
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -223,7 +223,7 @@ Begin Window GridWindow
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   480
+      Left            =   20
       LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   False
@@ -242,7 +242,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   21
+      Top             =   20
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -266,7 +266,7 @@ Begin Window GridWindow
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   550
+      Left            =   90
       LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   False
@@ -285,7 +285,7 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   21
+      Top             =   20
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -303,7 +303,7 @@ Begin Window GridWindow
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   518
+      Left            =   58
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -321,11 +321,75 @@ Begin Window GridWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   22
+      Top             =   21
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   20
+   End
+   Begin PushButton PushButton2
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "OK"
+      Default         =   True
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   279
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+   End
+   Begin PushButton PushButton1
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   True
+      Caption         =   "Cancel"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   247
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
    End
 End
 #tag EndWindow
