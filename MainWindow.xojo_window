@@ -32,7 +32,7 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
-		  GridWindow.Show
+		  GridSettings.Show
 		  
 		End Sub
 	#tag EndEvent

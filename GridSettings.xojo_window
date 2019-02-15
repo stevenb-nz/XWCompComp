@@ -327,7 +327,7 @@ Begin Window GridSettings
       Visible         =   True
       Width           =   20
    End
-   Begin PushButton PushButton2
+   Begin PushButton okayButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   "0"
@@ -359,7 +359,7 @@ Begin Window GridSettings
       Visible         =   True
       Width           =   100
    End
-   Begin PushButton PushButton1
+   Begin PushButton cancelButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   "0"
