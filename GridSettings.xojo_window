@@ -2,25 +2,25 @@
 Begin Window GridSettings
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
-   CloseButton     =   True
+   CloseButton     =   False
    Compatibility   =   ""
    Composite       =   False
    Frame           =   11
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   319
+   Height          =   320
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaxHeight       =   320
+   MaximizeButton  =   False
+   MaxWidth        =   140
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   True
-   MinWidth        =   64
+   MinHeight       =   320
+   MinimizeButton  =   False
+   MinWidth        =   140
    Placement       =   0
    Resizeable      =   True
    Title           =   "Grid"
@@ -334,7 +334,7 @@ Begin Window GridSettings
       Cancel          =   False
       Caption         =   "OK"
       Default         =   True
-      Enabled         =   True
+      Enabled         =   False
       Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
@@ -397,6 +397,14 @@ End
 #tag WindowCode
 #tag EndWindowCode
 
+#tag Events cancelButton
+	#tag Event
+		Sub Action()
+		  close
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="Name"
