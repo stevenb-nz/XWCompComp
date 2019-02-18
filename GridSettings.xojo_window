@@ -172,7 +172,7 @@ Begin Window GridSettings
       Top             =   183
       Transparent     =   False
       Underline       =   False
-      Value           =   False
+      Value           =   True
       Visible         =   True
       Width           =   100
    End
@@ -395,8 +395,53 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Sub Open()
+		  verifySettings
+		  
+		End Sub
+	#tag EndEvent
+
+
+	#tag Method, Flags = &h0
+		Sub verifySettings()
+		  
+		End Sub
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		selectedSymmetry As Integer = 4
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
+#tag Events SymmetryRadioButton
+	#tag Event
+		Sub Action(index as Integer)
+		  selectedSymmetry = index
+		  verifySettings
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events HorTextField
+	#tag Event
+		Sub TextChange()
+		  verifySettings
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events VerTextField
+	#tag Event
+		Sub TextChange()
+		  verifySettings
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events cancelButton
 	#tag Event
 		Sub Action()
@@ -629,5 +674,11 @@ End
 		InitialValue="True"
 		Type="Boolean"
 		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="selectedSymmetry"
+		Group="Behavior"
+		InitialValue="4"
+		Type="Integer"
 	#tag EndViewProperty
 #tag EndViewBehavior
