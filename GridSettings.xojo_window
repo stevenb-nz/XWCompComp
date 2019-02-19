@@ -405,6 +405,23 @@ End
 
 	#tag Method, Flags = &h0
 		Sub verifySettings()
+		  dim result as boolean
+		  
+		  if val(HorTextField.Text) < 5 or val(HorTextField.Text) > 25 or val(VerTextField.Text) < 5 or val(VerTextField.Text) > 25 then
+		    result = false
+		  else
+		    if selectedSymmetry < 5 then
+		      result = true
+		    else
+		      if val(HorTextField.Text) = val(VerTextField.Text) then
+		        result = true
+		      else
+		        result = false
+		      end
+		    end
+		  end
+		  
+		  okayButton.Enabled = result
 		  
 		End Sub
 	#tag EndMethod
