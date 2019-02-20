@@ -459,6 +459,17 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events okayButton
+	#tag Event
+		Sub Action()
+		  GridDesigner.Width = val(HorTextField.text)*27+12
+		  GridDesigner.Height = val(VerTextField.text)*27+12
+		  
+		  GridDesigner.Show
+		  close
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events cancelButton
 	#tag Event
 		Sub Action()

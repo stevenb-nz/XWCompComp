@@ -22,7 +22,7 @@ Begin Window GridDesigner
    MinimizeButton  =   True
    MinWidth        =   64
    Placement       =   0
-   Resizeable      =   True
+   Resizeable      =   False
    Title           =   "Grid Designer"
    Visible         =   False
    Width           =   600
