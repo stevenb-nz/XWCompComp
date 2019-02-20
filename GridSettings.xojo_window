@@ -463,7 +463,11 @@ End
 	#tag Event
 		Sub Action()
 		  GridDesigner.Width = val(HorTextField.text)*27+12
+		  GridDesigner.MinWidth = val(HorTextField.text)*27+12
+		  GridDesigner.MaxWidth = val(HorTextField.text)*27+12
 		  GridDesigner.Height = val(VerTextField.text)*27+12
+		  GridDesigner.MinHeight = val(VerTextField.text)*27+12
+		  GridDesigner.MaxHeight = val(VerTextField.text)*27+12
 		  
 		  GridDesigner.Show
 		  close

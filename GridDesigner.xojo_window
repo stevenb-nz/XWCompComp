@@ -14,12 +14,12 @@ Begin Window GridDesigner
    LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   32000
-   MaximizeButton  =   True
+   MaximizeButton  =   False
    MaxWidth        =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
    MinHeight       =   64
-   MinimizeButton  =   True
+   MinimizeButton  =   False
    MinWidth        =   64
    Placement       =   0
    Resizeable      =   False
