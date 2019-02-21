@@ -94,5 +94,19 @@ Begin Menu MainMenuBar
          Visible = True
       End
    End
+   Begin MenuItem GridMenu
+      SpecialMenu = 0
+      Text = "Grid"
+      Index = -2147483648
+      AutoEnable = True
+      Visible = True
+      Begin MenuItem GridNew
+         SpecialMenu = 0
+         Text = "New"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
+   End
 End
 #tag EndMenu

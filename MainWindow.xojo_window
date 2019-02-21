@@ -30,12 +30,13 @@ End
 #tag EndWindow
 
 #tag WindowCode
-	#tag Event
-		Sub Open()
-		  GridSettings.Show
-		  
-		End Sub
-	#tag EndEvent
+	#tag MenuHandler
+		Function GridNew() As Boolean Handles GridNew.Action
+			GridSettings.ShowModal
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
 
 
 #tag EndWindowCode
