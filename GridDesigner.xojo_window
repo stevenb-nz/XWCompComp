@@ -30,6 +30,28 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  
+		End Function
+	#tag EndEvent
+
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  
+		End Sub
+	#tag EndEvent
+
+
+	#tag Property, Flags = &h0
+		grid(-1,-1) As boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		selectedSymmetry As Integer
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag ViewBehavior
