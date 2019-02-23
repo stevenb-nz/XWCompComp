@@ -462,14 +462,17 @@ End
 #tag Events okayButton
 	#tag Event
 		Sub Action()
-		  redim GridDesigner.grid(val(HorTextField.text)-1,val(VerTextField.text)-1)
+		  GridDesigner.gridx = val(HorTextField.text)
+		  GridDesigner.gridy = val(VerTextField.Text)
 		  
-		  GridDesigner.Width = val(HorTextField.text)*27+12
-		  GridDesigner.MinWidth = val(HorTextField.text)*27+12
-		  GridDesigner.MaxWidth = val(HorTextField.text)*27+12
-		  GridDesigner.Height = val(VerTextField.text)*27+12
-		  GridDesigner.MinHeight = val(VerTextField.text)*27+12
-		  GridDesigner.MaxHeight = val(VerTextField.text)*27+12
+		  redim GridDesigner.grid(GridDesigner.gridx-1,GridDesigner.gridy-1)
+		  
+		  GridDesigner.Width = GridDesigner.gridx*27+12
+		  GridDesigner.MinWidth = GridDesigner.gridx*27+12
+		  GridDesigner.MaxWidth = GridDesigner.gridx*27+12
+		  GridDesigner.Height = GridDesigner.gridy*27+12
+		  GridDesigner.MinHeight = GridDesigner.gridy*27+12
+		  GridDesigner.MaxHeight = GridDesigner.gridy*27+12
 		  
 		  GridDesigner.selectedSymmetry = selectedSymmetry
 		  

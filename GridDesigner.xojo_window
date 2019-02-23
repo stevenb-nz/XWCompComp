@@ -38,13 +38,30 @@ End
 
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  dim i,j as integer
 		  
+		  g.PenWidth = 2
+		  for i = 0 to gridx
+		    g.DrawLine i*27+5,5,i*27+5,gridy*27+5
+		  next
+		  g.PenHeight = 2
+		  for j = 0 to gridy
+		    g.DrawLine 5,j*27+5,gridx*27+5,j*27+5
+		  next
 		End Sub
 	#tag EndEvent
 
 
 	#tag Property, Flags = &h0
 		grid(-1,-1) As boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		gridx As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		gridy As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -278,5 +295,10 @@ End
 		InitialValue="True"
 		Type="Boolean"
 		EditorType="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="selectedSymmetry"
+		Group="Behavior"
+		Type="Integer"
 	#tag EndViewProperty
 #tag EndViewBehavior
