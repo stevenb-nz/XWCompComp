@@ -48,6 +48,14 @@ End
 		  for j = 0 to gridy
 		    g.DrawLine 5,j*27+5,gridx*27+5,j*27+5
 		  next
+		  
+		  for i = 0 to gridx-1
+		    for j = 0 to gridy-1
+		      if grid(i,j) then
+		        g.FillRect(i*27+7,j*27+7,25,25)
+		      end
+		    next
+		  next
 		End Sub
 	#tag EndEvent
 
@@ -298,6 +306,16 @@ End
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="selectedSymmetry"
+		Group="Behavior"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="gridx"
+		Group="Behavior"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="gridy"
 		Group="Behavior"
 		Type="Integer"
 	#tag EndViewProperty
