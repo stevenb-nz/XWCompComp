@@ -54,6 +54,7 @@ End
 		  if squarex < gridx and squarey < gridy then
 		    grid(squarex,squarey) = not grid(squarex,squarey)
 		  end
+		  'select case for symmetry
 		  Refresh
 		  
 		End Function
