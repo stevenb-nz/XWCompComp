@@ -32,6 +32,29 @@ End
 #tag WindowCode
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  dim leftx, topy, squarex, squarey as integer
+		  
+		  squarex = gridx
+		  squarey = gridy
+		  
+		  leftx = x-7
+		  if leftx >= 0 then
+		    if leftx mod 27 < 25 then
+		      squarex = leftx \ 27
+		    end
+		  end
+		  
+		  topy = y-7
+		  if topy >= 0 then
+		    if topy mod 27 < 25 then
+		      squarey = topy \ 27
+		    end
+		  end
+		  
+		  if squarex < gridx and squarey < gridy then
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  end
+		  Refresh
 		  
 		End Function
 	#tag EndEvent
