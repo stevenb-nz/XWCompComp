@@ -59,18 +59,30 @@ End
 		      if squarex <> (gridx-1)-squarex then
 		        grid((gridx-1)-squarex,squarey) = not grid((gridx-1)-squarex,squarey)
 		      end
-		    Case 2 'v
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		    Case 3 'both
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		    Case 4 '1/2 turn
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		    Case 5 '1/4 turn
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		      grid(squarex,squarey) = not grid(squarex,squarey)
-		      grid(squarex,squarey) = not grid(squarex,squarey)
+		    Case 2
+		      if squarey <> (gridy-1)-squarey then
+		        grid(squarex,(gridy-1)-squarey) = not grid(squarex,(gridy-1)-squarey)
+		      end
+		    Case 3
+		      if squarex <> (gridx-1)-squarex then
+		        grid((gridx-1)-squarex,squarey) = not grid((gridx-1)-squarex,squarey)
+		      end
+		      if squarey <> (gridy-1)-squarey then
+		        grid(squarex,(gridy-1)-squarey) = not grid(squarex,(gridy-1)-squarey)
+		      end
+		      if squarex <> (gridx-1)-squarex and squarey <> (gridy-1)-squarey then
+		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      end
+		    Case 4
+		      if squarex <> (gridx-1)-squarex or squarey <> (gridy-1)-squarey then
+		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      end
+		    Case 5
+		      grid(squarey,(gridx-1)-squarex) = not grid(squarey,(gridx-1)-squarex)
+		      grid((gridy-1)-squarey,squarex) = not grid((gridy-1)-squarey,squarex)
+		      if squarex <> (gridx-1)-squarex or squarey <> (gridy-1)-squarey then
+		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      end
 		    End
 		  end
 		  Refresh
