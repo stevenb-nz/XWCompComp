@@ -54,7 +54,22 @@ End
 		  if squarex < gridx and squarey < gridy then
 		    grid(squarex,squarey) = not grid(squarex,squarey)
 		  end
-		  'select case for symmetry
+		  Select Case selectedSymmetry
+		  Case 1 'h
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  Case 2 'v
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  Case 3 'both
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  Case 4 '1/2 turn
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  Case 5 '1/4 turn
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  End Select
 		  Refresh
 		  
 		End Function
