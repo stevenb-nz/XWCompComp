@@ -391,7 +391,7 @@ Begin Window GridSettings
       Visible         =   True
       Width           =   120
    End
-   Begin UpDownArrows UpDownArrows1
+   Begin UpDownArrows HorUpDownArrows
       AcceptFocus     =   False
       AutoDeactivate  =   True
       Enabled         =   True
@@ -414,7 +414,7 @@ Begin Window GridSettings
       Visible         =   True
       Width           =   13
    End
-   Begin UpDownArrows UpDownArrows2
+   Begin UpDownArrows VerUpDownArrows
       AcceptFocus     =   False
       AutoDeactivate  =   True
       Enabled         =   True
@@ -531,6 +531,42 @@ End
 	#tag Event
 		Sub Action()
 		  close
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events HorUpDownArrows
+	#tag Event
+		Sub Up()
+		  if val(HorTextField.Text) < 25 then
+		    HorTextField.Text = str(val(HorTextField.Text)+1)
+		  end
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Down()
+		  if val(HorTextField.Text) > 5 then
+		    HorTextField.Text = str(val(HorTextField.Text)-1)
+		  end
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events VerUpDownArrows
+	#tag Event
+		Sub Down()
+		  if val(VerTextField.Text) > 5 then
+		    VerTextField.Text = str(val(VerTextField.Text)-1)
+		  end
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Up()
+		  if val(VerTextField.Text) < 25 then
+		    VerTextField.Text = str(val(VerTextField.Text)+1)
+		  end
 		  
 		End Sub
 	#tag EndEvent
