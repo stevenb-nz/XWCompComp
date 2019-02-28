@@ -9,23 +9,23 @@ Begin Window GridSettings
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   320
+   Height          =   319
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   320
    MaximizeButton  =   False
-   MaxWidth        =   140
+   MaxWidth        =   160
    MenuBar         =   0
    MenuBarVisible  =   True
    MinHeight       =   320
    MinimizeButton  =   False
-   MinWidth        =   140
+   MinWidth        =   160
    Placement       =   0
    Resizeable      =   True
    Title           =   "Grid"
    Visible         =   False
-   Width           =   140
+   Width           =   160
    Begin RadioButton SymmetryRadioButton
       AutoDeactivate  =   True
       Bold            =   False
@@ -214,12 +214,12 @@ Begin Window GridSettings
       BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
-      CueText         =   "15"
+      CueText         =   ""
       DataField       =   ""
       DataSource      =   ""
-      Enabled         =   True
+      Enabled         =   False
       Format          =   ""
-      Height          =   22
+      Height          =   23
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
@@ -237,7 +237,7 @@ Begin Window GridSettings
       TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   ""
+      Text            =   "15"
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
@@ -247,7 +247,7 @@ Begin Window GridSettings
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   30
+      Width           =   23
    End
    Begin TextField VerTextField
       AcceptTabs      =   False
@@ -257,16 +257,16 @@ Begin Window GridSettings
       BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
-      CueText         =   "15"
+      CueText         =   ""
       DataField       =   ""
       DataSource      =   ""
-      Enabled         =   True
+      Enabled         =   False
       Format          =   ""
-      Height          =   22
+      Height          =   23
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   90
+      Left            =   98
       LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   False
@@ -280,7 +280,7 @@ Begin Window GridSettings
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   ""
+      Text            =   "15"
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
@@ -290,7 +290,7 @@ Begin Window GridSettings
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   30
+      Width           =   23
    End
    Begin Label ByLabel
       AutoDeactivate  =   True
@@ -298,12 +298,12 @@ Begin Window GridSettings
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   21
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   58
+      Left            =   70
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -325,7 +325,7 @@ Begin Window GridSettings
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   20
+      Width           =   21
    End
    Begin PushButton okayButton
       AutoDeactivate  =   True
@@ -357,7 +357,7 @@ Begin Window GridSettings
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   120
    End
    Begin PushButton cancelButton
       AutoDeactivate  =   True
@@ -389,7 +389,53 @@ Begin Window GridSettings
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   120
+   End
+   Begin UpDownArrows UpDownArrows1
+      AcceptFocus     =   False
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   50
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   13
+   End
+   Begin UpDownArrows UpDownArrows2
+      AcceptFocus     =   False
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   127
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   13
    End
 End
 #tag EndWindow
