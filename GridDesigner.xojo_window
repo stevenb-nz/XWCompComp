@@ -34,8 +34,8 @@ End
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  dim leftx, topy, squarex, squarey as integer
 		  
-		  squarex = gridx
-		  squarey = gridy
+		  squarex = grid.hor
+		  squarey = grid.ver
 		  
 		  leftx = x-7
 		  if leftx >= 0 then
@@ -51,37 +51,37 @@ End
 		    end
 		  end
 		  
-		  if squarex < gridx and squarey < gridy then
-		    grid(squarex,squarey) = not grid(squarex,squarey)
+		  if squarex < grid.hor and squarey < grid.ver then
+		    grid.grid(squarex,squarey) = not grid.grid(squarex,squarey)
 		    
 		    Select Case selectedSymmetry
 		    Case 1
-		      if squarex <> (gridx-1)-squarex then
-		        grid((gridx-1)-squarex,squarey) = not grid((gridx-1)-squarex,squarey)
+		      if squarex <> (grid.hor-1)-squarex then
+		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
 		      end
 		    Case 2
-		      if squarey <> (gridy-1)-squarey then
-		        grid(squarex,(gridy-1)-squarey) = not grid(squarex,(gridy-1)-squarey)
+		      if squarey <> (grid.ver-1)-squarey then
+		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
 		      end
 		    Case 3
-		      if squarex <> (gridx-1)-squarex then
-		        grid((gridx-1)-squarex,squarey) = not grid((gridx-1)-squarex,squarey)
+		      if squarex <> (grid.hor-1)-squarex then
+		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
 		      end
-		      if squarey <> (gridy-1)-squarey then
-		        grid(squarex,(gridy-1)-squarey) = not grid(squarex,(gridy-1)-squarey)
+		      if squarey <> (grid.ver-1)-squarey then
+		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
 		      end
-		      if squarex <> (gridx-1)-squarex and squarey <> (gridy-1)-squarey then
-		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      if squarex <> (grid.hor-1)-squarex and squarey <> (grid.ver-1)-squarey then
+		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
 		      end
 		    Case 4
-		      if squarex <> (gridx-1)-squarex or squarey <> (gridy-1)-squarey then
-		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
+		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
 		      end
 		    Case 5
-		      grid(squarey,(gridx-1)-squarex) = not grid(squarey,(gridx-1)-squarex)
-		      grid((gridy-1)-squarey,squarex) = not grid((gridy-1)-squarey,squarex)
-		      if squarex <> (gridx-1)-squarex or squarey <> (gridy-1)-squarey then
-		        grid((gridx-1)-squarex,(gridy-1)-squarey) = not grid((gridx-1)-squarex,(gridy-1)-squarey)
+		      grid.grid(squarey,(grid.hor-1)-squarex) = not grid.grid(squarey,(grid.hor-1)-squarex)
+		      grid.grid((grid.ver-1)-squarey,squarex) = not grid.grid((grid.ver-1)-squarey,squarex)
+		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
+		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
 		      end
 		    End
 		  end
@@ -95,17 +95,17 @@ End
 		  dim i,j as integer
 		  
 		  g.PenWidth = 2
-		  for i = 0 to gridx
-		    g.DrawLine i*27+5,5,i*27+5,gridy*27+5
+		  for i = 0 to grid.hor
+		    g.DrawLine i*27+5,5,i*27+5,grid.ver*27+5
 		  next
 		  g.PenHeight = 2
-		  for j = 0 to gridy
-		    g.DrawLine 5,j*27+5,gridx*27+5,j*27+5
+		  for j = 0 to grid.ver
+		    g.DrawLine 5,j*27+5,grid.hor*27+5,j*27+5
 		  next
 		  
-		  for i = 0 to gridx-1
-		    for j = 0 to gridy-1
-		      if grid(i,j) then
+		  for i = 0 to grid.hor-1
+		    for j = 0 to grid.ver-1
+		      if grid.grid(i,j) then
 		        g.FillRect(i*27+7,j*27+7,25,25)
 		      end
 		    next
@@ -115,15 +115,7 @@ End
 
 
 	#tag Property, Flags = &h0
-		grid(-1,-1) As boolean
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		gridx As Integer
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		gridy As Integer
+		grid As Grid
 	#tag EndProperty
 
 	#tag Property, Flags = &h0

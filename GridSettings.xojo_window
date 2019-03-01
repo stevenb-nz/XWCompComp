@@ -508,22 +508,25 @@ End
 #tag Events okayButton
 	#tag Event
 		Sub Action()
-		  GridDesigner.gridx = val(HorTextField.text)
-		  GridDesigner.gridy = val(VerTextField.Text)
+		  GridDesigner.grid = new Grid
 		  
-		  redim GridDesigner.grid(GridDesigner.gridx-1,GridDesigner.gridy-1)
+		  GridDesigner.grid.hor = val(HorTextField.text)
+		  GridDesigner.grid.ver = val(VerTextField.Text)
 		  
-		  GridDesigner.Width = GridDesigner.gridx*27+12
-		  GridDesigner.MinWidth = GridDesigner.gridx*27+12
-		  GridDesigner.MaxWidth = GridDesigner.gridx*27+12
-		  GridDesigner.Height = GridDesigner.gridy*27+12
-		  GridDesigner.MinHeight = GridDesigner.gridy*27+12
-		  GridDesigner.MaxHeight = GridDesigner.gridy*27+12
+		  redim GridDesigner.grid.grid(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
+		  
+		  GridDesigner.Width = GridDesigner.grid.hor*27+12
+		  GridDesigner.MinWidth = GridDesigner.grid.hor*27+12
+		  GridDesigner.MaxWidth = GridDesigner.grid.hor*27+12
+		  GridDesigner.Height = GridDesigner.grid.ver*27+12
+		  GridDesigner.MinHeight = GridDesigner.grid.ver*27+12
+		  GridDesigner.MaxHeight = GridDesigner.grid.ver*27+12
 		  
 		  GridDesigner.selectedSymmetry = selectedSymmetry
 		  
 		  GridDesigner.Show
 		  close
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

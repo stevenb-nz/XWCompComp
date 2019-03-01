@@ -52,6 +52,11 @@ Protected Class Grid
 			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ver"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class
 #tag EndClass
