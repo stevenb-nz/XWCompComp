@@ -84,6 +84,8 @@ End
 		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
 		      end
 		    End
+		    
+		    setContentsChanged
 		  end
 		  Refresh
 		  
@@ -112,6 +114,26 @@ End
 		  next
 		End Sub
 	#tag EndEvent
+
+
+	#tag Method, Flags = &h0
+		Sub setContentsChanged()
+		  dim x,y as Integer
+		  
+		  for x = 0 to grid.hor-1
+		    for y = 0 to grid.ver-1
+		      if grid.grid(x,y) then
+		        ContentsChanged = true
+		        return
+		      end
+		    next
+		  next
+		  
+		  ContentsChanged = false
+		  
+		  
+		End Sub
+	#tag EndMethod
 
 
 	#tag Property, Flags = &h0
