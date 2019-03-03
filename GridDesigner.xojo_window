@@ -31,6 +31,12 @@ End
 
 #tag WindowCode
 	#tag Event
+		Function CancelClose(appQuitting as Boolean) As Boolean
+		  return ContentsChanged
+		End Function
+	#tag EndEvent
+
+	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  dim leftx, topy, squarex, squarey as integer
 		  
@@ -374,16 +380,6 @@ End
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="selectedSymmetry"
-		Group="Behavior"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="gridx"
-		Group="Behavior"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="gridy"
 		Group="Behavior"
 		Type="Integer"
 	#tag EndViewProperty
