@@ -32,7 +32,16 @@ End
 #tag WindowCode
 	#tag Event
 		Function CancelClose(appQuitting as Boolean) As Boolean
-		  return ContentsChanged
+		  dim n as integer
+		  
+		  if ContentsChanged then
+		    n = MsgBox("Do you want to store this grid?", 36)
+		    If n = 6 Then
+		      MsgBox "store grid"
+		    end
+		  end
+		  
+		  return false
 		End Function
 	#tag EndEvent
 
