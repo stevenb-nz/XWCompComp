@@ -35,8 +35,11 @@ End
 		  dim n as integer
 		  
 		  if ContentsChanged then
-		    n = MsgBox("Do you want to store this grid?", 36)
-		    If n = 6 Then
+		    n = MsgBox("Do you want to store this grid?", 35)
+		    select case n
+		    case 2
+		      return true
+		    case 6
 		      MsgBox "store grid"
 		    end
 		  end
