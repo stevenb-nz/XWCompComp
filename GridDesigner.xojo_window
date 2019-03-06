@@ -40,7 +40,7 @@ End
 		    case 2
 		      return true
 		    case 6
-		      MsgBox "store grid"
+		      storeGrid
 		    end
 		  end
 		  
@@ -149,6 +149,13 @@ End
 		  
 		  ContentsChanged = false
 		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub storeGrid()
+		  MsgBox "grid saved"
 		  
 		End Sub
 	#tag EndMethod
