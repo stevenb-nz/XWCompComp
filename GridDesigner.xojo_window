@@ -134,6 +134,15 @@ End
 	#tag EndEvent
 
 
+	#tag MenuHandler
+		Function GridInfo() As Boolean Handles GridInfo.Action
+			MsgBox ""
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+
 	#tag Method, Flags = &h0
 		Sub setContentsChanged()
 		  dim x,y as Integer
