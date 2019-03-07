@@ -71,6 +71,7 @@ End
 		  
 		  if squarex < grid.hor and squarey < grid.ver then
 		    grid.grid(squarex,squarey) = not grid.grid(squarex,squarey)
+		    grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
 		    
 		    Select Case selectedSymmetry
 		    Case 1
@@ -136,6 +137,8 @@ End
 
 	#tag MenuHandler
 		Function GridInfo() As Boolean Handles GridInfo.Action
+			MsgBox str(grid.open)
+			
 			GridInfoWindow.ShowModal
 			Return True
 			

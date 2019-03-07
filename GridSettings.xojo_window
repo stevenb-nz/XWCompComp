@@ -512,6 +512,7 @@ End
 		  
 		  GridDesigner.grid.hor = val(HorTextField.text)
 		  GridDesigner.grid.ver = val(VerTextField.Text)
+		  GridDesigner.grid.open = GridDesigner.grid.hor*GridDesigner.grid.ver
 		  
 		  redim GridDesigner.grid.grid(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
 		  

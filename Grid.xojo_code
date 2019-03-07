@@ -9,6 +9,10 @@ Protected Class Grid
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
+		open As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		ver As Integer
 	#tag EndProperty
 
