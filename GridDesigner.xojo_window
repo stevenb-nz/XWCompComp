@@ -77,39 +77,39 @@ End
 		    Case 1
 		      if squarex <> (grid.hor-1)-squarex then
 		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid((grid.hor-1)-squarex,squarey), grid.open-1, grid.open+1)
 		      end
 		    Case 2
 		      if squarey <> (grid.ver-1)-squarey then
 		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid(squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
 		      end
 		    Case 3
 		      if squarex <> (grid.hor-1)-squarex then
 		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid((grid.hor-1)-squarex,squarey), grid.open-1, grid.open+1)
 		      end
 		      if squarey <> (grid.ver-1)-squarey then
 		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid(squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
 		      end
 		      if squarex <> (grid.hor-1)-squarex and squarey <> (grid.ver-1)-squarey then
 		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
 		      end
 		    Case 4
 		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
 		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
 		      end
 		    Case 5
 		      grid.grid(squarey,(grid.hor-1)-squarex) = not grid.grid(squarey,(grid.hor-1)-squarex)
-		      grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		      grid.open = if(grid.grid(squarey,(grid.hor-1)-squarex), grid.open-1, grid.open+1)
 		      grid.grid((grid.ver-1)-squarey,squarex) = not grid.grid((grid.ver-1)-squarey,squarex)
-		      grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		      grid.open = if(grid.grid((grid.ver-1)-squarey,squarex), grid.open-1, grid.open+1)
 		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
 		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
 		      end
 		    End
 		    
@@ -146,9 +146,9 @@ End
 
 	#tag MenuHandler
 		Function GridInfo() As Boolean Handles GridInfo.Action
-			MsgBox str(grid.open)
+			MsgBox str(grid.open) + ", " + str(grid.hor*grid.ver-grid.open)
 			
-			GridInfoWindow.ShowModal
+			'GridInfoWindow.ShowModal
 			Return True
 			
 		End Function
