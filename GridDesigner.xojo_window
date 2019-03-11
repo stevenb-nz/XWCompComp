@@ -146,9 +146,10 @@ End
 
 	#tag MenuHandler
 		Function GridInfo() As Boolean Handles GridInfo.Action
-			MsgBox str(grid.open) + ", " + str(grid.hor*grid.ver-grid.open)
+			GridInfoWindow.InfoListbox.AddRow("White squares:",str(grid.open))
+			GridInfoWindow.InfoListbox.AddRow("Black squares:",str(grid.hor*grid.ver-grid.open))
 			
-			'GridInfoWindow.ShowModal
+			GridInfoWindow.ShowModal
 			Return True
 			
 		End Function
