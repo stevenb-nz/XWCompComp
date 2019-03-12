@@ -163,16 +163,27 @@ End
 
 
 	#tag Method, Flags = &h0
+		Sub addtodict(d as Dictionary, clen as integer)
+		  if d.HasKey(clen) then
+		    d.Value(clen) = d.Value(clen) + 1
+		  else
+		    d.Value(clen) = 1
+		  end
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub countLengths()
-		  dim d As  Dictionary
-		  dim clen,x,y as integer
+		  dim d As new Dictionary
+		  dim clen,i,j,x,y as integer
 		  
 		  for x = 0 to grid.hor-1
 		    clen = 0
 		    for y = 0 to grid.ver-1
 		      if grid.grid(x,y) then
 		        if clen > 1 then
-		          MsgBox str(clen)
+		          addtodict(d,clen)
 		        end
 		        clen = 0
 		      else
@@ -180,7 +191,7 @@ End
 		      end
 		    next
 		    if clen > 1 then
-		      MsgBox str(clen)
+		      addtodict(d,clen)
 		    end
 		  next
 		  
@@ -189,7 +200,7 @@ End
 		    for x = 0 to grid.hor-1
 		      if grid.grid(x,y) then
 		        if clen > 1 then
-		          MsgBox str(clen)
+		          addtodict(d,clen)
 		        end
 		        clen = 0
 		      else
@@ -197,7 +208,16 @@ End
 		      end
 		    next
 		    if clen > 1 then
-		      MsgBox str(clen)
+		      addtodict(d,clen)
+		    end
+		  next
+		  
+		  j = max(grid.hor,grid.ver)
+		  for i = j downto 2
+		    if d.HasKey(i) then
+		      GridInfoWindow.InfoListbox.AddRow(str(i)+" letters:",str(d.value(i)))
+		    else
+		      GridInfoWindow.InfoListbox.AddRow(str(i)+" letters:","-")
 		    end
 		  next
 		  
