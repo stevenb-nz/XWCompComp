@@ -146,6 +146,9 @@ End
 
 	#tag MenuHandler
 		Function GridInfo() As Boolean Handles GridInfo.Action
+			if GridInfoWindow.Visible then
+			GridInfoWindow.Hide
+			else
 			GridInfoWindow.InfoListbox.DeleteAllRows
 			
 			GridInfoWindow.InfoListbox.AddRow("White squares:",str(grid.open))
@@ -156,6 +159,8 @@ End
 			countLengths
 			
 			GridInfoWindow.ShowModal
+			end
+			
 			Return True
 			
 		End Function
