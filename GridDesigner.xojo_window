@@ -151,7 +151,9 @@ End
 			GridInfoWindow.InfoListbox.AddRow("White squares:",str(grid.open))
 			GridInfoWindow.InfoListbox.AddRow("Black squares:",str(grid.hor*grid.ver-grid.open))
 			
+			GridInfoWindow.InfoListbox.addrow
 			
+			countLengths
 			
 			GridInfoWindow.ShowModal
 			Return True
@@ -159,6 +161,48 @@ End
 		End Function
 	#tag EndMenuHandler
 
+
+	#tag Method, Flags = &h0
+		Sub countLengths()
+		  dim d As  Dictionary
+		  dim clen,x,y as integer
+		  
+		  for x = 0 to grid.hor-1
+		    clen = 0
+		    for y = 0 to grid.ver-1
+		      if grid.grid(x,y) then
+		        if clen > 1 then
+		          MsgBox str(clen)
+		        end
+		        clen = 0
+		      else
+		        clen = clen + 1
+		      end
+		    next
+		    if clen > 1 then
+		      MsgBox str(clen)
+		    end
+		  next
+		  
+		  for y = 0 to grid.ver-1
+		    clen = 0
+		    for x = 0 to grid.hor-1
+		      if grid.grid(x,y) then
+		        if clen > 1 then
+		          MsgBox str(clen)
+		        end
+		        clen = 0
+		      else
+		        clen = clen + 1
+		      end
+		    next
+		    if clen > 1 then
+		      MsgBox str(clen)
+		    end
+		  next
+		  
+		End Sub
+	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub setContentsChanged()
