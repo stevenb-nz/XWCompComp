@@ -82,6 +82,15 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if asc(Key) = 27 then
+		    self.Hide
+		  end
+		End Function
+	#tag EndEvent
+
+
 #tag EndWindowCode
 
 #tag ViewBehavior
