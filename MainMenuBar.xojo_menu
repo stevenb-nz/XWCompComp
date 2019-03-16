@@ -107,6 +107,20 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem GridClear
+         SpecialMenu = 0
+         Text = "Clear"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem GridFill
+         SpecialMenu = 0
+         Text = "Fill"
+         Index = -2147483648
+         AutoEnable = True
+         Visible = True
+      End
       Begin MenuItem GridInfo
          SpecialMenu = 0
          Text = "Info"

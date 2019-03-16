@@ -145,6 +145,22 @@ End
 
 
 	#tag MenuHandler
+		Function GridClear() As Boolean Handles GridClear.Action
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function GridFill() As Boolean Handles GridFill.Action
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
 		Function GridInfo() As Boolean Handles GridInfo.Action
 			if GridInfoWindow.Visible then
 			GridInfoWindow.Hide
