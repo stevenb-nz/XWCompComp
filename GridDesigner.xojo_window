@@ -146,7 +146,14 @@ End
 
 	#tag MenuHandler
 		Function GridClear() As Boolean Handles GridClear.Action
+			dim x,y as integer
 			
+			for x = 0 to grid.hor - 1
+			for y = 0 to grid.ver - 1
+			grid.grid(x,y) = false
+			next
+			next
+			Refresh
 			Return True
 			
 		End Function
@@ -154,7 +161,14 @@ End
 
 	#tag MenuHandler
 		Function GridFill() As Boolean Handles GridFill.Action
+			dim x,y as integer
 			
+			for x = 0 to grid.hor - 1
+			for y = 0 to grid.ver - 1
+			grid.grid(x,y) = true
+			next
+			next
+			Refresh
 			Return True
 			
 		End Function
