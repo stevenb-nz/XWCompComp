@@ -516,12 +516,12 @@ End
 		  
 		  redim GridDesigner.grid.grid(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
 		  
-		  GridDesigner.Width = GridDesigner.grid.hor*27+12
-		  GridDesigner.MinWidth = GridDesigner.grid.hor*27+12
-		  GridDesigner.MaxWidth = GridDesigner.grid.hor*27+12
-		  GridDesigner.Height = GridDesigner.grid.ver*27+12
-		  GridDesigner.MinHeight = GridDesigner.grid.ver*27+12
-		  GridDesigner.MaxHeight = GridDesigner.grid.ver*27+12
+		  GridDesigner.Width = GridDesigner.grid.hor*27+13
+		  GridDesigner.MinWidth = GridDesigner.grid.hor*27+13
+		  GridDesigner.MaxWidth = GridDesigner.grid.hor*27+13
+		  GridDesigner.Height = GridDesigner.grid.ver*27+13
+		  GridDesigner.MinHeight = GridDesigner.grid.ver*27+13
+		  GridDesigner.MaxHeight = GridDesigner.grid.ver*27+13
 		  
 		  GridDesigner.selectedSymmetry = selectedSymmetry
 		  

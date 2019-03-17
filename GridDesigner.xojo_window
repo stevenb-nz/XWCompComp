@@ -130,10 +130,10 @@ End
 		    l = if(k=2,0,k*2)
 		    g.ForeColor = rgb(128*l-1,128*l-1,128*l-1)
 		    for i = 0 to grid.hor
-		      g.DrawLine i*27+5+k,5,i*27+5+k,grid.ver*27+5
+		      g.DrawLine i*27+5+k,7,i*27+5+k,grid.ver*27+4
 		    next
 		    for j = 0 to grid.ver
-		      g.DrawLine 5,j*27+5+k,grid.hor*27+5,j*27+5+k
+		      g.DrawLine 7,j*27+5+k,grid.hor*27+4,j*27+5+k
 		    next
 		  next
 		  
@@ -141,7 +141,7 @@ End
 		  for i = 0 to grid.hor-1
 		    for j = 0 to grid.ver-1
 		      if grid.grid(i,j) then
-		        g.FillRect(i*27+7,j*27+7,25,25)
+		        g.FillRect(i*27+8,j*27+8,24,24)
 		      end
 		    next
 		  next
@@ -159,6 +159,8 @@ End
 			next
 			next
 			Refresh
+			grid.open = grid.hor*grid.ver
+			ContentsChanged = false
 			Return True
 			
 		End Function
@@ -174,6 +176,8 @@ End
 			next
 			next
 			Refresh
+			grid.open = 0
+			ContentsChanged = false
 			Return True
 			
 		End Function
