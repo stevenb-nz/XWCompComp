@@ -8,7 +8,7 @@ Begin Window GridDesigner
    Frame           =   11
    FullScreen      =   False
    FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackColor    =   True
    Height          =   400
    ImplicitInstance=   True
    LiveResize      =   True
@@ -130,14 +130,15 @@ End
 		    l = if(k=2,0,k*2)
 		    g.ForeColor = rgb(128*l-1,128*l-1,128*l-1)
 		    for i = 0 to grid.hor
-		      g.DrawLine i*27+5+k,7,i*27+5+k,grid.ver*27+4
+		      g.DrawLine i*27+5+k,7,i*27+5+k,grid.ver*27+5
 		    next
 		    for j = 0 to grid.ver
-		      g.DrawLine 7,j*27+5+k,grid.hor*27+4,j*27+5+k
+		      g.DrawLine 7,j*27+5+k,grid.hor*27+5,j*27+5+k
 		    next
 		  next
-		  
 		  g.ForeColor = RGB(0,0,0)
+		  g.DrawRect(5,5,grid.hor*27+3,grid.ver*27+3)
+		  
 		  for i = 0 to grid.hor-1
 		    for j = 0 to grid.ver-1
 		      if grid.grid(i,j) then
