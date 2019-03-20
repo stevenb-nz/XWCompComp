@@ -133,7 +133,9 @@ End
 		    next
 		  next
 		  
-		  g.DrawRect(5,5,grid.hor*27+3,grid.ver*27+3)
+		  g.PenWidth = 6
+		  g.PenHeight = 6
+		  g.DrawRect(0,0,grid.hor*27+13,grid.ver*27+13)
 		  
 		  for i = 0 to grid.hor-1
 		    for j = 0 to grid.ver-1
