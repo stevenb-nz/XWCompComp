@@ -126,17 +126,13 @@ End
 		  
 		  g.PenWidth = 1
 		  g.PenHeight = 1
-		  for k = 0 to 2
-		    l = if(k=2,0,k*2)
-		    g.ForeColor = rgb(128*l-1,128*l-1,128*l-1)
-		    for i = 0 to grid.hor
-		      g.DrawLine i*27+5+k,7,i*27+5+k,grid.ver*27+5
-		    next
-		    for j = 0 to grid.ver
-		      g.DrawLine 7,j*27+5+k,grid.hor*27+5,j*27+5+k
+		  g.ForeColor = RGB(0,0,0)
+		  for i = 0 to grid.hor-1
+		    for j = 0 to grid.ver-1
+		      g.DrawRect(i*27+7,j*27+7,26,26)
 		    next
 		  next
-		  g.ForeColor = RGB(0,0,0)
+		  
 		  g.DrawRect(5,5,grid.hor*27+3,grid.ver*27+3)
 		  
 		  for i = 0 to grid.hor-1
