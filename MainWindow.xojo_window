@@ -30,6 +30,33 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Sub EnableMenuItems()
+		  if currentGrid = nil then
+		    GridFitWords.Enabled = false
+		  else
+		    GridFitWords.Enabled = true
+		  end
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Open()
+		  currentGrid = nil
+		  
+		End Sub
+	#tag EndEvent
+
+
+	#tag MenuHandler
+		Function GridFitWords() As Boolean Handles GridFitWords.Action
+			'open fit words window
+			
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
 	#tag MenuHandler
 		Function GridNew() As Boolean Handles GridNew.Action
 			GridSettings.ShowModal

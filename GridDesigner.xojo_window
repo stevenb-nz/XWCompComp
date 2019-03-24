@@ -288,6 +288,7 @@ End
 
 	#tag Method, Flags = &h0
 		Sub storeGrid()
+		  MainWindow.currentGrid = new Grid
 		  MainWindow.currentGrid = grid
 		  
 		End Sub

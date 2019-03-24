@@ -107,6 +107,13 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem GridFitWords
+         SpecialMenu = 0
+         Text = "Fit Words"
+         Index = -2147483648
+         AutoEnable = False
+         Visible = True
+      End
       Begin MenuItem GridClear
          SpecialMenu = 0
          Text = "Clear"
