@@ -288,7 +288,7 @@ End
 
 	#tag Method, Flags = &h0
 		Sub storeGrid()
-		  MsgBox "grid saved"
+		  MainWindow.currentGrid = grid
 		  
 		End Sub
 	#tag EndMethod

@@ -39,6 +39,11 @@ End
 	#tag EndMenuHandler
 
 
+	#tag Property, Flags = &h0
+		currentGrid As Grid
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag ViewBehavior
