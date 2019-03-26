@@ -50,7 +50,7 @@ End
 
 	#tag MenuHandler
 		Function GridFitWords() As Boolean Handles GridFitWords.Action
-			'open fit words window
+			FitWords.show
 			
 			Return True
 			
