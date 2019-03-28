@@ -50,22 +50,22 @@ End
 
 	#tag MenuHandler
 		Function GridFitWords() As Boolean Handles GridFitWords.Action
-			'GridDesigner.grid = new Grid
+			'FitWords.grid = new Grid
 			'
-			'GridDesigner.grid.hor = val(HorTextField.text)
-			'GridDesigner.grid.ver = val(VerTextField.Text)
-			'GridDesigner.grid.open = GridDesigner.grid.hor*GridDesigner.grid.ver
+			'FitWords.grid.hor = val(HorTextField.text)
+			'FitWords.grid.ver = val(VerTextField.Text)
+			'FitWords.grid.open = FitWords.grid.hor*FitWords.grid.ver
 			'
-			'redim GridDesigner.grid.grid(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
+			'redim FitWords.grid.grid(FitWords.grid.hor-1,FitWords.grid.ver-1)
 			'
-			'GridDesigner.Width = GridDesigner.grid.hor*27+13
-			'GridDesigner.MinWidth = GridDesigner.grid.hor*27+13
-			'GridDesigner.MaxWidth = GridDesigner.grid.hor*27+13
-			'GridDesigner.Height = GridDesigner.grid.ver*27+13
-			'GridDesigner.MinHeight = GridDesigner.grid.ver*27+13
-			'GridDesigner.MaxHeight = GridDesigner.grid.ver*27+13
+			'FitWords.Width = FitWords.grid.hor*27+13
+			'FitWords.MinWidth = FitWords.grid.hor*27+13
+			'FitWords.MaxWidth = FitWords.grid.hor*27+13
+			'FitWords.Height = FitWords.grid.ver*27+13
+			'FitWords.MinHeight = FitWords.grid.ver*27+13
+			'FitWords.MaxHeight = FitWords.grid.ver*27+13
 			'
-			'GridDesigner.selectedSymmetry = selectedSymmetry
+			'FitWords.selectedSymmetry = selectedSymmetry
 			
 			FitWords.show
 			
