@@ -26,7 +26,7 @@ Begin Window FitWords
    Title           =   "Fit Words"
    Visible         =   False
    Width           =   600
-   Begin Listbox Listbox1
+   Begin Listbox SolutionListbox
       AutoDeactivate  =   True
       AutoHideScrollbars=   True
       Bold            =   False
