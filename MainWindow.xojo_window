@@ -58,9 +58,9 @@ End
 			'
 			'redim FitWords.grid.grid(FitWords.grid.hor-1,FitWords.grid.ver-1)
 			'
-			'FitWords.Width = FitWords.grid.hor*27+13
-			'FitWords.MinWidth = FitWords.grid.hor*27+13
-			'FitWords.MaxWidth = FitWords.grid.hor*27+13
+			'FitWords.Width = FitWords.grid.hor*27+313
+			'FitWords.MinWidth = FitWords.grid.hor*27+313
+			'FitWords.MaxWidth = FitWords.grid.hor*27+313
 			'FitWords.Height = FitWords.grid.ver*27+13
 			'FitWords.MinHeight = FitWords.grid.ver*27+13
 			'FitWords.MaxHeight = FitWords.grid.ver*27+13
