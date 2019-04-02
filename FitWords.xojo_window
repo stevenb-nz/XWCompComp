@@ -125,47 +125,6 @@ End
 		    grid.grid(squarex,squarey) = not grid.grid(squarex,squarey)
 		    grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
 		    
-		    Select Case selectedSymmetry
-		    Case 1
-		      if squarex <> (grid.hor-1)-squarex then
-		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
-		        grid.open = if(grid.grid((grid.hor-1)-squarex,squarey), grid.open-1, grid.open+1)
-		      end
-		    Case 2
-		      if squarey <> (grid.ver-1)-squarey then
-		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
-		      end
-		    Case 3
-		      if squarex <> (grid.hor-1)-squarex then
-		        grid.grid((grid.hor-1)-squarex,squarey) = not grid.grid((grid.hor-1)-squarex,squarey)
-		        grid.open = if(grid.grid((grid.hor-1)-squarex,squarey), grid.open-1, grid.open+1)
-		      end
-		      if squarey <> (grid.ver-1)-squarey then
-		        grid.grid(squarex,(grid.ver-1)-squarey) = not grid.grid(squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid(squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
-		      end
-		      if squarex <> (grid.hor-1)-squarex and squarey <> (grid.ver-1)-squarey then
-		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
-		      end
-		    Case 4
-		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
-		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
-		      end
-		    Case 5
-		      grid.grid(squarey,(grid.hor-1)-squarex) = not grid.grid(squarey,(grid.hor-1)-squarex)
-		      grid.open = if(grid.grid(squarey,(grid.hor-1)-squarex), grid.open-1, grid.open+1)
-		      grid.grid((grid.ver-1)-squarey,squarex) = not grid.grid((grid.ver-1)-squarey,squarex)
-		      grid.open = if(grid.grid((grid.ver-1)-squarey,squarex), grid.open-1, grid.open+1)
-		      if squarex <> (grid.hor-1)-squarex or squarey <> (grid.ver-1)-squarey then
-		        grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey) = not grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey)
-		        grid.open = if(grid.grid((grid.hor-1)-squarex,(grid.ver-1)-squarey), grid.open-1, grid.open+1)
-		      end
-		    End
-		    
-		    setContentsChanged
 		  end
 		  Refresh
 		  
@@ -200,144 +159,6 @@ End
 	#tag EndEvent
 
 
-	#tag MenuHandler
-		Function GridClear() As Boolean Handles GridClear.Action
-			dim x,y as integer
-			
-			for x = 0 to grid.hor - 1
-			for y = 0 to grid.ver - 1
-			grid.grid(x,y) = false
-			next
-			next
-			Refresh
-			grid.open = grid.hor*grid.ver
-			ContentsChanged = false
-			Return True
-			
-		End Function
-	#tag EndMenuHandler
-
-	#tag MenuHandler
-		Function GridFill() As Boolean Handles GridFill.Action
-			dim x,y as integer
-			
-			for x = 0 to grid.hor - 1
-			for y = 0 to grid.ver - 1
-			grid.grid(x,y) = true
-			next
-			next
-			Refresh
-			grid.open = 0
-			ContentsChanged = false
-			Return True
-			
-		End Function
-	#tag EndMenuHandler
-
-	#tag MenuHandler
-		Function GridInfo() As Boolean Handles GridInfo.Action
-			if GridInfoWindow.Visible then
-			GridInfoWindow.Hide
-			else
-			GridInfoWindow.InfoListbox.DeleteAllRows
-			
-			GridInfoWindow.InfoListbox.AddRow("White squares:",str(grid.open))
-			GridInfoWindow.InfoListbox.AddRow("Black squares:",str(grid.hor*grid.ver-grid.open))
-			
-			GridInfoWindow.InfoListbox.addrow
-			
-			countLengths
-			
-			GridInfoWindow.ShowModal
-			end
-			
-			Return True
-			
-		End Function
-	#tag EndMenuHandler
-
-
-	#tag Method, Flags = &h0
-		Sub addtodict(d as Dictionary, clen as integer)
-		  if d.HasKey(clen) then
-		    d.Value(clen) = d.Value(clen) + 1
-		  else
-		    d.Value(clen) = 1
-		  end
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub countLengths()
-		  dim d As new Dictionary
-		  dim clen,i,j,x,y as integer
-		  
-		  for x = 0 to grid.hor-1
-		    clen = 0
-		    for y = 0 to grid.ver-1
-		      if grid.grid(x,y) then
-		        if clen > 1 then
-		          addtodict(d,clen)
-		        end
-		        clen = 0
-		      else
-		        clen = clen + 1
-		      end
-		    next
-		    if clen > 1 then
-		      addtodict(d,clen)
-		    end
-		  next
-		  
-		  for y = 0 to grid.ver-1
-		    clen = 0
-		    for x = 0 to grid.hor-1
-		      if grid.grid(x,y) then
-		        if clen > 1 then
-		          addtodict(d,clen)
-		        end
-		        clen = 0
-		      else
-		        clen = clen + 1
-		      end
-		    next
-		    if clen > 1 then
-		      addtodict(d,clen)
-		    end
-		  next
-		  
-		  j = max(grid.hor,grid.ver)
-		  for i = j downto 2
-		    if d.HasKey(i) then
-		      GridInfoWindow.InfoListbox.AddRow(str(i)+" letters:",str(d.value(i)))
-		    else
-		      GridInfoWindow.InfoListbox.AddRow(str(i)+" letters:","-")
-		    end
-		  next
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub setContentsChanged()
-		  dim x,y as Integer
-		  
-		  for x = 0 to grid.hor-1
-		    for y = 0 to grid.ver-1
-		      if grid.grid(x,y) then
-		        ContentsChanged = true
-		        return
-		      end
-		    next
-		  next
-		  
-		  ContentsChanged = false
-		  
-		  
-		End Sub
-	#tag EndMethod
-
 	#tag Method, Flags = &h0
 		Sub storeGrid()
 		  MainWindow.currentGrid = new Grid
@@ -349,10 +170,6 @@ End
 
 	#tag Property, Flags = &h0
 		grid As Grid
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		selectedSymmetry As Integer
 	#tag EndProperty
 
 
