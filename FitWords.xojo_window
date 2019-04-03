@@ -149,20 +149,31 @@ End
 		  g.PenHeight = 6
 		  g.DrawRect(0,0,grid.hor*27+13,grid.ver*27+13)
 		  
+		  g.TextSize = 7
 		  clueNumber = 1
-		  for i = 0 to grid.hor-1
-		    for j = 0 to grid.ver-1
+		  for j = 0 to grid.hor-1
+		    for i = 0 to grid.ver-1
 		      if grid.grid(i,j) then
 		        g.FillRect(i*27+8,j*27+8,24,24)
 		      else
-		        if i < grid.hor-1 and j < grid.ver-1 then
-		          if not grid.grid(i+1,j) then
-		            clues.push str(clueNumber) + " Across"
+		        if i = 0 and j = 0 then
+		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            g.DrawString(str(clueNumber),i*27+10,j*27+14)
+		            clueNumber = clueNumber + 1
 		          end
-		          if not grid.grid(i,j+1) then
-		            clues.push str(clueNumber) + " Down"
+		        ElseIf i = 0 then
+		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            g.DrawString(str(clueNumber),i*27+10,j*27+14)
+		            clueNumber = clueNumber + 1
 		          end
-		          if not (grid.grid(i+1,j) and grid.grid(i,j+1)) then
+		        ElseIf j = 0 then
+		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            g.DrawString(str(clueNumber),i*27+10,j*27+14)
+		            clueNumber = clueNumber + 1
+		          end
+		        else
+		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            g.DrawString(str(clueNumber),i*27+10,j*27+14)
 		            clueNumber = clueNumber + 1
 		          end
 		        end
