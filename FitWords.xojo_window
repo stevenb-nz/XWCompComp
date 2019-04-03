@@ -133,7 +133,8 @@ End
 
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  dim i,j,k,l as integer
+		  dim i,j,k,l,clueNumber as integer
+		  dim clues(-1) as string
 		  
 		  g.PenWidth = 1
 		  g.PenHeight = 1
@@ -148,10 +149,23 @@ End
 		  g.PenHeight = 6
 		  g.DrawRect(0,0,grid.hor*27+13,grid.ver*27+13)
 		  
+		  clueNumber = 1
 		  for i = 0 to grid.hor-1
 		    for j = 0 to grid.ver-1
 		      if grid.grid(i,j) then
 		        g.FillRect(i*27+8,j*27+8,24,24)
+		      else
+		        if i < grid.hor-1 and j < grid.ver-1 then
+		          if not grid.grid(i+1,j) then
+		            clues.push str(clueNumber) + " Across"
+		          end
+		          if not grid.grid(i,j+1) then
+		            clues.push str(clueNumber) + " Down"
+		          end
+		          if not (grid.grid(i+1,j) and grid.grid(i,j+1)) then
+		            clueNumber = clueNumber + 1
+		          end
+		        end
 		      end
 		    next
 		  next
@@ -399,10 +413,5 @@ End
 		InitialValue="True"
 		Type="Boolean"
 		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="selectedSymmetry"
-		Group="Behavior"
-		Type="Integer"
 	#tag EndViewProperty
 #tag EndViewBehavior
