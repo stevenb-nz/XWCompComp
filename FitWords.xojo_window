@@ -122,8 +122,7 @@ End
 		  end
 		  
 		  if squarex < grid.hor and squarey < grid.ver then
-		    grid.grid(squarex,squarey) = not grid.grid(squarex,squarey)
-		    grid.open = if(grid.grid(squarex,squarey), grid.open-1, grid.open+1)
+		    
 		    
 		  end
 		  Refresh
