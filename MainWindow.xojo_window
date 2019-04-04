@@ -50,6 +50,8 @@ End
 
 	#tag MenuHandler
 		Function GridFitWords() As Boolean Handles GridFitWords.Action
+			dim i,j,clueNumber as integer
+			
 			FitWords.grid = currentGrid
 			
 			FitWords.Width = FitWords.grid.hor*27+353
@@ -58,6 +60,40 @@ End
 			FitWords.Height = FitWords.grid.ver*27+13
 			FitWords.MinHeight = FitWords.grid.ver*27+13
 			FitWords.MaxHeight = FitWords.grid.ver*27+13
+			
+			clueNumber = 1
+			for j = 0 to currentGrid.hor-1
+			for i = 0 to currentGrid.ver-1
+			if not currentGrid.grid(i,j) then
+			if i = 0 and j = 0 then
+			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
+			if i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
+			FitWords.SolutionListbox.AddRow str(clueNumber) + " Across."
+			end
+			if j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
+			FitWords.SolutionListbox.AddRow str(clueNumber) + " Down."
+			end
+			clueNumber = clueNumber + 1
+			end
+			ElseIf i = 0 then
+			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
+			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			clueNumber = clueNumber + 1
+			end
+			ElseIf j = 0 then
+			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
+			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			clueNumber = clueNumber + 1
+			end
+			else
+			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
+			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			clueNumber = clueNumber + 1
+			end
+			end
+			end
+			next
+			next
 			
 			FitWords.show
 			

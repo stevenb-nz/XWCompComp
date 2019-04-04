@@ -133,7 +133,6 @@ End
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
 		  dim i,j,k,l,clueNumber as integer
-		  dim clues(-1) as string
 		  
 		  g.PenWidth = 1
 		  g.PenHeight = 1
