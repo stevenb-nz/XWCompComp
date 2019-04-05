@@ -33,8 +33,10 @@ End
 	#tag Event
 		Sub EnableMenuItems()
 		  if currentGrid = nil then
+		    GridEdit.Enabled = false
 		    GridFitWords.Enabled = false
 		  else
+		    GridEdit.Enabled = true
 		    GridFitWords.Enabled = true
 		  end
 		End Sub
@@ -77,17 +79,32 @@ End
 			end
 			ElseIf i = 0 then
 			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
-			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			if i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
+			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			end
+			if currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
+			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			end
 			clueNumber = clueNumber + 1
 			end
 			ElseIf j = 0 then
 			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
-			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			if currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
+			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			end
+			if j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
+			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			end
 			clueNumber = clueNumber + 1
 			end
 			else
 			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
-			'g.DrawString(str(clueNumber),i*27+10,j*27+14)
+			if currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
+			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			end
+			if currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
+			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			end
 			clueNumber = clueNumber + 1
 			end
 			end
