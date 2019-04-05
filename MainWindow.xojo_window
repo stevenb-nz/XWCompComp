@@ -68,10 +68,10 @@ End
 			if i = 0 and j = 0 then
 			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
 			if i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
-			FitWords.SolutionListbox.AddRow str(clueNumber) + " Across."
+			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
 			end
 			if j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
-			FitWords.SolutionListbox.AddRow str(clueNumber) + " Down."
+			FitWords.DownListbox.AddRow str(clueNumber) + ". "
 			end
 			clueNumber = clueNumber + 1
 			end
