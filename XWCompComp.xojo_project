@@ -10,6 +10,7 @@ Window=FitWords;FitWords.xojo_window;&h00000000292D7FFF;&h0000000000000000;false
 Window=GridSettings;GridSettings.xojo_window;&h0000000019991FFF;&h0000000000000000;false
 Class=Grid;Grid.xojo_code;&h000000002A315FFF;&h0000000000000000;false
 Window=GridInfoWindow;GridInfoWindow.xojo_window;&h000000007097D7FF;&h0000000000000000;false
+Class=DirectionArrow;DirectionArrow.xojo_code;&h000000007845F7FF;&h0000000000000000;false
 DefaultWindow=MainWindow
 AppMenuBar=MainMenuBar
 MajorVersion=1

@@ -244,6 +244,10 @@ End
 
 
 	#tag Property, Flags = &h0
+		arrow As DirectionArrow
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		grid As Grid
 	#tag EndProperty
 
