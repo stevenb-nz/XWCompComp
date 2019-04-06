@@ -63,6 +63,7 @@ End
 			FitWords.MinHeight = FitWords.grid.ver*27+13
 			FitWords.MaxHeight = FitWords.grid.ver*27+13
 			
+			FitWords.arrow = nil
 			clueNumber = 1
 			for j = 0 to currentGrid.hor-1
 			for i = 0 to currentGrid.ver-1
@@ -71,9 +72,21 @@ End
 			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
 			if i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
 			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = true
+			end
 			end
 			if j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
 			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = false
+			end
 			end
 			clueNumber = clueNumber + 1
 			end
@@ -81,9 +94,21 @@ End
 			if (i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
 			if i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
 			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = true
+			end
 			end
 			if currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
 			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = false
+			end
 			end
 			clueNumber = clueNumber + 1
 			end
@@ -91,9 +116,21 @@ End
 			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
 			if currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
 			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = true
+			end
 			end
 			if j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
 			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = false
+			end
 			end
 			clueNumber = clueNumber + 1
 			end
@@ -101,9 +138,21 @@ End
 			if (currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j)) or (currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1)) then
 			if currentGrid.grid(i-1,j) and i < currentGrid.hor-1 and not currentGrid.grid(i+1,j) then
 			FitWords.AcrossListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = true
+			end
 			end
 			if currentGrid.grid(i,j-1) and j < currentGrid.ver-1 and not currentGrid.grid(i,j+1) then
 			FitWords.DownListbox.AddRow str(clueNumber) + ". "
+			if FitWords.arrow = nil then
+			FitWords.arrow = new DirectionArrow
+			FitWords.arrow.x = i
+			FitWords.arrow.y = j
+			FitWords.arrow.horizontal = false
+			end
 			end
 			clueNumber = clueNumber + 1
 			end

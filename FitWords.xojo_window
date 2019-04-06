@@ -199,6 +199,14 @@ End
 		  g.PenHeight = 6
 		  g.DrawRect(0,0,grid.hor*27+13,grid.ver*27+13)
 		  
+		  if arrow <> nil then
+		    if arrow.horizontal then
+		      g.DrawString("H",arrow.x*27+10,arrow.y*27+14)
+		    else
+		      g.DrawString("V",arrow.x*27+10,arrow.y*27+14)
+		    end
+		  end
+		  
 		  g.TextSize = 7
 		  clueNumber = 1
 		  for j = 0 to grid.hor-1
