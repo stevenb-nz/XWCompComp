@@ -199,15 +199,18 @@ End
 		  g.PenHeight = 6
 		  g.DrawRect(0,0,grid.hor*27+13,grid.ver*27+13)
 		  
+		  g.TextSize = 24
+		  g.ForeColor = RGB(255,223,223)
 		  if arrow <> nil then
-		    if arrow.horizontal then
-		      g.DrawString("H",arrow.x*27+10,arrow.y*27+14)
+		    if not arrow.horizontal then
+		      g.DrawString("➡︎",arrow.x*27+10,arrow.y*27+29)
 		    else
-		      g.DrawString("V",arrow.x*27+10,arrow.y*27+14)
+		      g.DrawString("⬇︎",arrow.x*27+10,arrow.y*27+29)
 		    end
 		  end
 		  
 		  g.TextSize = 7
+		  g.ForeColor = Color.black
 		  clueNumber = 1
 		  for j = 0 to grid.hor-1
 		    for i = 0 to grid.ver-1
