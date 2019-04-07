@@ -175,7 +175,16 @@ End
 		  
 		  if squarex < grid.hor and squarey < grid.ver then
 		    
-		    
+		    if not grid.grid(squarex,squarey) then
+		      if arrow <> nil then
+		        if arrow.x = squarex and arrow.y = squarey then
+		          arrow.horizontal = not arrow.horizontal
+		        else
+		          arrow.x = squarex
+		          arrow.y = squarey
+		        end
+		      end
+		    end
 		  end
 		  Refresh
 		  
@@ -202,7 +211,7 @@ End
 		  g.TextSize = 24
 		  g.ForeColor = RGB(255,223,223)
 		  if arrow <> nil then
-		    if not arrow.horizontal then
+		    if arrow.horizontal then
 		      g.DrawString("➡︎",arrow.x*27+10,arrow.y*27+29)
 		    else
 		      g.DrawString("⬇︎",arrow.x*27+10,arrow.y*27+29)
