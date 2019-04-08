@@ -135,20 +135,10 @@ End
 
 #tag WindowCode
 	#tag Event
-		Function CancelClose(appQuitting as Boolean) As Boolean
-		  dim n as integer
-		  
-		  if ContentsChanged then
-		    n = MsgBox("Do you want to store this grid?", 35)
-		    select case n
-		    case 2
-		      return true
-		    case 6
-		      storeGrid
-		    end
-		  end
-		  
+		Function KeyDown(Key As String) As Boolean
+		  handleKeys key
 		  return false
+		  
 		End Function
 	#tag EndEvent
 
@@ -255,9 +245,20 @@ End
 
 
 	#tag Method, Flags = &h0
-		Sub storeGrid()
-		  MainWindow.currentGrid = new Grid
-		  MainWindow.currentGrid = grid
+		Sub handleKeys(Key as String)
+		  Select case Asc(Key)
+		  case 28
+		    arrow.horizontal = true
+		  case 29
+		    arrow.horizontal = true
+		  case 30
+		    arrow.horizontal = false
+		  case 31
+		    arrow.horizontal = false
+		  else
+		    
+		  end
+		  Refresh
 		  
 		End Sub
 	#tag EndMethod
@@ -274,6 +275,24 @@ End
 
 #tag EndWindowCode
 
+#tag Events AcrossListbox
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  handleKeys key
+		  return true
+		  
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events DownListbox
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  handleKeys key
+		  return true
+		  
+		End Function
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="Name"
