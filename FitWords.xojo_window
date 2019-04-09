@@ -255,6 +255,8 @@ End
 		    arrow.horizontal = false
 		  case 31
 		    arrow.horizontal = false
+		  case 32,65 to 90,97 to 122
+		    
 		  else
 		    
 		  end
