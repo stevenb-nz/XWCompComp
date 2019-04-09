@@ -216,6 +216,11 @@ End
 		      if grid.grid(i,j) then
 		        g.FillRect(i*27+8,j*27+8,24,24)
 		      else
+		        if grid.cells(i,j) <> "" then
+		          g.TextSize = 18
+		          g.DrawString(grid.cells(i,j),i*27+14,j*27+27)
+		          g.TextSize = 7
+		        end
 		        if i = 0 and j = 0 then
 		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
 		            g.DrawString(str(clueNumber),i*27+10,j*27+14)
@@ -256,7 +261,7 @@ End
 		  case 31
 		    arrow.horizontal = false
 		  case 32,65 to 90,97 to 122
-		    
+		    grid.cells(arrow.x,arrow.y) = Uppercase(Key)
 		  else
 		    
 		  end

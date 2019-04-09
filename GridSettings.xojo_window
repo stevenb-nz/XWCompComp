@@ -515,6 +515,7 @@ End
 		  GridDesigner.grid.open = GridDesigner.grid.hor*GridDesigner.grid.ver
 		  
 		  redim GridDesigner.grid.grid(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
+		  redim GridDesigner.grid.cells(GridDesigner.grid.hor-1,GridDesigner.grid.ver-1)
 		  
 		  GridDesigner.Width = GridDesigner.grid.hor*27+13
 		  GridDesigner.MinWidth = GridDesigner.grid.hor*27+13

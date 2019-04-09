@@ -1,6 +1,10 @@
 #tag Class
 Protected Class Grid
 	#tag Property, Flags = &h0
+		cells(-1,-1) As string
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		grid(-1,-1) As Boolean
 	#tag EndProperty
 
@@ -58,6 +62,11 @@ Protected Class Grid
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ver"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="open"
 			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty
