@@ -1,5 +1,12 @@
 #tag Class
 Protected Class DirectionArrow
+	#tag Method, Flags = &h0
+		Sub advance(key as string)
+		  
+		End Sub
+	#tag EndMethod
+
+
 	#tag Property, Flags = &h0
 		horizontal As Boolean
 	#tag EndProperty
@@ -49,6 +56,16 @@ Protected Class DirectionArrow
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="x"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="horizontal"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="y"
 			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty
