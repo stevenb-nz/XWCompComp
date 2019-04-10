@@ -2,7 +2,15 @@
 Protected Class DirectionArrow
 	#tag Method, Flags = &h0
 		Sub advance(key as string)
-		  
+		  if horizontal then
+		    if x < FitWords.grid.hor then
+		      
+		    end
+		  else
+		    if y < FitWords.grid.ver then
+		      
+		    end
+		  end
 		End Sub
 	#tag EndMethod
 
