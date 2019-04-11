@@ -251,6 +251,9 @@ End
 
 	#tag Method, Flags = &h0
 		Sub handleKeys(Key as String)
+		  dim advance As Boolean
+		  
+		  advance = true
 		  Select case Asc(Key)
 		  case 28
 		    arrow.horizontal = true
@@ -263,7 +266,10 @@ End
 		  case 32,65 to 90,97 to 122
 		    grid.cells(arrow.x,arrow.y) = Uppercase(Key)
 		  else
-		    
+		    advance = false
+		  end
+		  if advance then
+		    arrow.advance(Key)
 		  end
 		  Refresh
 		  
