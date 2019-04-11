@@ -255,14 +255,8 @@ End
 		  
 		  advance = true
 		  Select case Asc(Key)
-		  case 28
-		    arrow.horizontal = true
-		  case 29
-		    arrow.horizontal = true
-		  case 30
-		    arrow.horizontal = false
-		  case 31
-		    arrow.horizontal = false
+		  case 28 to 31
+		    
 		  case 32,65 to 90,97 to 122
 		    grid.cells(arrow.x,arrow.y) = Uppercase(Key)
 		  else

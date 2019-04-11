@@ -2,15 +2,40 @@
 Protected Class DirectionArrow
 	#tag Method, Flags = &h0
 		Sub advance(key as string)
-		  if horizontal then
-		    if x < FitWords.grid.hor then
-		      
-		    end
-		  else
-		    if y < FitWords.grid.ver then
-		      
+		  dim i,offset as Integer
+		  
+		  offset = 0
+		  if (horizontal and x < (FitWords.grid.hor-1)) or (not horizontal and y < (FitWords.grid.ver-1)) then
+		    Select case Asc(Key)
+		    case 28
+		      'x=x-1 - go to next light left, if exists
+		      horizontal = true
+		    case 29
+		      if horizontal then
+		        'x=x+1 - go to next light right, if exists
+		      end
+		      horizontal = true
+		    case 30
+		      'y=y-1 - go to next light up, if exists
+		      horizontal = false
+		    case 31
+		      if not horizontal then
+		        'y=y+1 - go to next light down, if exists
+		      end
+		      horizontal = false
+		    else
+		      if horizontal then
+		        if not FitWords.grid.grid(x+1,y) then
+		          x = x + 1
+		        end
+		      else
+		        if not FitWords.grid.grid(x,y+1) then
+		          y = y + 1
+		        end
+		      end
 		    end
 		  end
+		  
 		End Sub
 	#tag EndMethod
 
