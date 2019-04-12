@@ -4,23 +4,48 @@ Protected Class DirectionArrow
 		Sub advance(key as string)
 		  dim i,offset as Integer
 		  
+		  i = 1
 		  offset = 0
-		  if (horizontal and x < (FitWords.grid.hor-1)) or (not horizontal and y < (FitWords.grid.ver-1)) then
+		  if (horizontal and x < (FitWords.grid.hor)) or (not horizontal and y < (FitWords.grid.ver)) then
 		    Select case Asc(Key)
 		    case 28
-		      'x=x-1 - go to next light left, if exists
+		      while offset = 0 and x-i > -1
+		        if not FitWords.grid.grid(x-i,y) then
+		          offset = i
+		        end
+		        i = i + 1
+		      wend
+		      x=x-offset
 		      horizontal = true
 		    case 29
 		      if horizontal then
-		        'x=x+1 - go to next light right, if exists
+		        while offset = 0 and x+i < FitWords.grid.hor
+		          if not FitWords.grid.grid(x+i,y) then
+		            offset = i
+		          end
+		          i = i + 1
+		        wend
+		        x=x+offset
 		      end
 		      horizontal = true
 		    case 30
-		      'y=y-1 - go to next light up, if exists
+		      while offset = 0 and y-i > -1
+		        if not FitWords.grid.grid(x,y-i) then
+		          offset = i
+		        end
+		        i = i + 1
+		      wend
+		      y=y-offset
 		      horizontal = false
 		    case 31
 		      if not horizontal then
-		        'y=y+1 - go to next light down, if exists
+		        while offset = 0 and y+i < FitWords.grid.ver
+		          if not FitWords.grid.grid(x,y+i) then
+		            offset = i
+		          end
+		          i = i + 1
+		        wend
+		        y=y+offset
 		      end
 		      horizontal = false
 		    else
