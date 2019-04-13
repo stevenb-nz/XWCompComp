@@ -6,57 +6,56 @@ Protected Class DirectionArrow
 		  
 		  i = 1
 		  offset = 0
-		  if (horizontal and x < (FitWords.grid.hor)) or (not horizontal and y < (FitWords.grid.ver)) then
-		    Select case Asc(Key)
-		    case 28
-		      while offset = 0 and x-i > -1
-		        if not FitWords.grid.grid(x-i,y) then
+		  Select case Asc(Key)
+		  case 28
+		    while offset = 0 and x-i > -1
+		      if not FitWords.grid.grid(x-i,y) then
+		        offset = i
+		      end
+		      i = i + 1
+		    wend
+		    x=x-offset
+		    horizontal = true
+		  case 29
+		    if horizontal then
+		      while offset = 0 and x+i < FitWords.grid.hor
+		        if not FitWords.grid.grid(x+i,y) then
 		          offset = i
 		        end
 		        i = i + 1
 		      wend
-		      x=x-offset
-		      horizontal = true
-		    case 29
-		      if horizontal then
-		        while offset = 0 and x+i < FitWords.grid.hor
-		          if not FitWords.grid.grid(x+i,y) then
-		            offset = i
-		          end
-		          i = i + 1
-		        wend
-		        x=x+offset
+		      x=x+offset
+		    end
+		    horizontal = true
+		  case 30
+		    while offset = 0 and y-i > -1
+		      if not FitWords.grid.grid(x,y-i) then
+		        offset = i
 		      end
-		      horizontal = true
-		    case 30
-		      while offset = 0 and y-i > -1
-		        if not FitWords.grid.grid(x,y-i) then
+		      i = i + 1
+		    wend
+		    y=y-offset
+		    horizontal = false
+		  case 31
+		    if not horizontal then
+		      while offset = 0 and y+i < FitWords.grid.ver
+		        if not FitWords.grid.grid(x,y+i) then
 		          offset = i
 		        end
 		        i = i + 1
 		      wend
-		      y=y-offset
-		      horizontal = false
-		    case 31
-		      if not horizontal then
-		        while offset = 0 and y+i < FitWords.grid.ver
-		          if not FitWords.grid.grid(x,y+i) then
-		            offset = i
-		          end
-		          i = i + 1
-		        wend
-		        y=y+offset
+		      y=y+offset
+		    end
+		    horizontal = false
+		  else
+		    if horizontal and x < FitWords.grid.hor-1 then
+		      if not FitWords.grid.grid(x+1,y) then
+		        x = x + 1
 		      end
-		      horizontal = false
-		    else
-		      if horizontal then
-		        if not FitWords.grid.grid(x+1,y) then
-		          x = x + 1
-		        end
-		      else
-		        if not FitWords.grid.grid(x,y+1) then
-		          y = y + 1
-		        end
+		    end
+		    if not horizontal and y < FitWords.grid.ver-1 then
+		      if not FitWords.grid.grid(x,y+1) then
+		        y = y + 1
 		      end
 		    end
 		  end
