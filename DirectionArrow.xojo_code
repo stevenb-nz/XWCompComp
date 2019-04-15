@@ -7,6 +7,18 @@ Protected Class DirectionArrow
 		  i = 1
 		  offset = 0
 		  Select case Asc(Key)
+		  case 8
+		    FitWords.grid.cells(FitWords.arrow.x,FitWords.arrow.y) = " "
+		    if horizontal and x > 0 then
+		      if not FitWords.grid.grid(x-1,y) then
+		        x = x - 1
+		      end
+		    end
+		    if not horizontal and y > 0 then
+		      if not FitWords.grid.grid(x,y-1) then
+		        y = y - 1
+		      end
+		    end
 		  case 28
 		    while offset = 0 and x-i > -1
 		      if not FitWords.grid.grid(x-i,y) then
