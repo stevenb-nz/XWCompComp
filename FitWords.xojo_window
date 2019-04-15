@@ -259,6 +259,7 @@ End
 		    '
 		  case 32,65 to 90,97 to 122
 		    grid.cells(arrow.x,arrow.y) = Uppercase(Key)
+		    update_solution
 		  else
 		    advance = false
 		  end
@@ -266,6 +267,65 @@ End
 		    arrow.advance(Key)
 		  end
 		  Refresh
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub update_solution()
+		  dim i,j,clueNumber as integer
+		  
+		  AcrossListbox.DeleteAllRows
+		  DownListbox.DeleteAllRows
+		  
+		  clueNumber = 1
+		  for j = 0 to grid.hor-1
+		    for i = 0 to grid.ver-1
+		      if not grid.grid(i,j) then
+		        if i = 0 and j = 0 then
+		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            if i < grid.hor-1 and not grid.grid(i+1,j) then
+		              AcrossListbox.AddRow str(clueNumber) + ". "
+		            end
+		            if j < grid.ver-1 and not grid.grid(i,j+1) then
+		              DownListbox.AddRow str(clueNumber) + ". "
+		            end
+		            clueNumber = clueNumber + 1
+		          end
+		        ElseIf i = 0 then
+		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            if i < grid.hor-1 and not grid.grid(i+1,j) then
+		              AcrossListbox.AddRow str(clueNumber) + ". "
+		            end
+		            if grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1) then
+		              DownListbox.AddRow str(clueNumber) + ". "
+		            end
+		            clueNumber = clueNumber + 1
+		          end
+		        ElseIf j = 0 then
+		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            if grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j) then
+		              AcrossListbox.AddRow str(clueNumber) + ". "
+		            end
+		            if j < grid.ver-1 and not grid.grid(i,j+1) then
+		              DownListbox.AddRow str(clueNumber) + ". "
+		            end
+		            clueNumber = clueNumber + 1
+		          end
+		        else
+		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
+		            if grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j) then
+		              AcrossListbox.AddRow str(clueNumber) + ". "
+		            end
+		            if grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1) then
+		              DownListbox.AddRow str(clueNumber) + ". "
+		            end
+		            clueNumber = clueNumber + 1
+		          end
+		        end
+		      end
+		    next
+		  next
 		  
 		End Sub
 	#tag EndMethod

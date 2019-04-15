@@ -9,6 +9,7 @@ Protected Class DirectionArrow
 		  Select case Asc(Key)
 		  case 8
 		    FitWords.grid.cells(FitWords.arrow.x,FitWords.arrow.y) = " "
+		    FitWords.update_solution
 		    if horizontal and x > 0 then
 		      if not FitWords.grid.grid(x-1,y) then
 		        x = x - 1
