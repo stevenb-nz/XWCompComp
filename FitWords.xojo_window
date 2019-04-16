@@ -285,40 +285,40 @@ End
 		        if i = 0 and j = 0 then
 		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
 		            if i < grid.hor-1 and not grid.grid(i+1,j) then
-		              AcrossListbox.AddRow str(clueNumber) + ". "
+		              AcrossListbox.AddRow str(clueNumber) + ". " + word_at(i,j,true)
 		            end
 		            if j < grid.ver-1 and not grid.grid(i,j+1) then
-		              DownListbox.AddRow str(clueNumber) + ". "
+		              DownListbox.AddRow str(clueNumber) + ". " + word_at(i,j,false)
 		            end
 		            clueNumber = clueNumber + 1
 		          end
 		        ElseIf i = 0 then
 		          if (i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
 		            if i < grid.hor-1 and not grid.grid(i+1,j) then
-		              AcrossListbox.AddRow str(clueNumber) + ". "
+		              AcrossListbox.AddRow str(clueNumber) + ". " + word_at(i,j,true)
 		            end
 		            if grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1) then
-		              DownListbox.AddRow str(clueNumber) + ". "
+		              DownListbox.AddRow str(clueNumber) + ". " + word_at(i,j,false)
 		            end
 		            clueNumber = clueNumber + 1
 		          end
 		        ElseIf j = 0 then
 		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (j < grid.ver-1 and not grid.grid(i,j+1)) then
 		            if grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j) then
-		              AcrossListbox.AddRow str(clueNumber) + ". "
+		              AcrossListbox.AddRow str(clueNumber) + ". " + word_at(i,j,true)
 		            end
 		            if j < grid.ver-1 and not grid.grid(i,j+1) then
-		              DownListbox.AddRow str(clueNumber) + ". "
+		              DownListbox.AddRow str(clueNumber) + ". " + word_at(i,j,false)
 		            end
 		            clueNumber = clueNumber + 1
 		          end
 		        else
 		          if (grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j)) or (grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1)) then
 		            if grid.grid(i-1,j) and i < grid.hor-1 and not grid.grid(i+1,j) then
-		              AcrossListbox.AddRow str(clueNumber) + ". "
+		              AcrossListbox.AddRow str(clueNumber) + ". " + word_at(i,j,true)
 		            end
 		            if grid.grid(i,j-1) and j < grid.ver-1 and not grid.grid(i,j+1) then
-		              DownListbox.AddRow str(clueNumber) + ". "
+		              DownListbox.AddRow str(clueNumber) + ". " + word_at(i,j,false)
 		            end
 		            clueNumber = clueNumber + 1
 		          end
@@ -328,6 +328,12 @@ End
 		  next
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function word_at(x As integer, y As Integer, direction As Boolean) As String
+		  
+		End Function
 	#tag EndMethod
 
 
