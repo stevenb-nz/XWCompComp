@@ -332,6 +332,11 @@ End
 
 	#tag Method, Flags = &h0
 		Function word_at(x As integer, y As Integer, direction As Boolean) As String
+		  if direction then
+		    return "ACROSS"
+		  else
+		    return "DOWN"
+		  end
 		  
 		End Function
 	#tag EndMethod
