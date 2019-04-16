@@ -332,11 +332,24 @@ End
 
 	#tag Method, Flags = &h0
 		Function word_at(x As integer, y As Integer, direction As Boolean) As String
+		  dim word as string
+		  dim word_len as integer
+		  
+		  
+		  word_len = 1
+		  word = grid.cells(x,y)
 		  if direction then
-		    return "ACROSS"
+		    while x+word_len < grid.hor and not grid.grid(x+word_len,y)
+		      word = word + grid.cells(x+word_len,y)
+		      word_len = word_len + 1
+		    wend
 		  else
-		    return "DOWN"
+		    while y+word_len < grid.ver and not grid.grid(x,y+word_len)
+		      word = word + grid.cells(x,y+word_len)
+		      word_len = word_len + 1
+		    wend
 		  end
+		  return word + " " + "("+str(word_len)+")"
 		  
 		End Function
 	#tag EndMethod
