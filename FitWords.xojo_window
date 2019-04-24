@@ -135,6 +135,24 @@ End
 
 #tag WindowCode
 	#tag Event
+		Function CancelClose(appQuitting as Boolean) As Boolean
+		  dim n as integer
+		  
+		  if ContentsChanged then
+		    n = MsgBox("Do you want to store this solution?", 35)
+		    select case n
+		    case 2
+		      return true
+		    case 6
+		      'storeSolution
+		    end
+		  end
+		  
+		  return false
+		End Function
+	#tag EndEvent
+
+	#tag Event
 		Function KeyDown(Key As String) As Boolean
 		  handleKeys key
 		  return false
@@ -272,6 +290,25 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub setContentsChanged()
+		  dim x,y as Integer
+		  
+		  for x = 0 to grid.hor-1
+		    for y = 0 to grid.ver-1
+		      if asc(grid.cells(x,y)) > 32 then
+		        ContentsChanged = true
+		        return
+		      end
+		    next
+		  next
+		  
+		  ContentsChanged = false
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub update_solution()
 		  dim i,j,clueNumber as integer
 		  
@@ -326,6 +363,7 @@ End
 		      end
 		    next
 		  next
+		  setContentsChanged
 		  
 		End Sub
 	#tag EndMethod
