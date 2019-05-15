@@ -412,6 +412,11 @@ End
 		  
 		End Function
 	#tag EndEvent
+	#tag Event
+		Sub DoubleClick()
+		  
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events DownListbox
 	#tag Event
@@ -420,6 +425,11 @@ End
 		  return true
 		  
 		End Function
+	#tag EndEvent
+	#tag Event
+		Sub DoubleClick()
+		  
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
