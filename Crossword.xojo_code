@@ -1,27 +1,7 @@
 #tag Class
-Protected Class Grid
+Protected Class Crossword
 	#tag Property, Flags = &h0
-		cells(-1,-1) As string
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		grid(-1,-1) As Boolean
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		grid_id As Integer
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		hor As Integer
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		open As Integer
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		ver As Integer
+		grid As Grid
 	#tag EndProperty
 
 
@@ -60,17 +40,7 @@ Protected Class Grid
 			Type="Integer"
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="hor"
-			Group="Behavior"
-			Type="Integer"
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="ver"
-			Group="Behavior"
-			Type="Integer"
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="open"
+			Name="grid"
 			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty
