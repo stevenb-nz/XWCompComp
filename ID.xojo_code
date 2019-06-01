@@ -1,11 +1,11 @@
 #tag Class
-Protected Class Crossword
+Protected Class ID
 	#tag Property, Flags = &h0
-		grid As Grid
+		Sequence As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		id As ID
+		Series As String
 	#tag EndProperty
 
 
@@ -41,6 +41,11 @@ Protected Class Crossword
 			Visible=true
 			Group="Position"
 			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Series"
+			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty
 	#tag EndViewBehavior
