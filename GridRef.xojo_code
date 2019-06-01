@@ -1,15 +1,15 @@
 #tag Class
-Protected Class Clue
+Protected Class GridRef
 	#tag Property, Flags = &h0
-		answer As String
+		direction As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		grid_refs() As GridRef
+		x As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		question As String
+		y As Integer
 	#tag EndProperty
 
 
@@ -48,7 +48,7 @@ Protected Class Clue
 			Type="Integer"
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="question"
+			Name="x"
 			Group="Behavior"
 			Type="Integer"
 		#tag EndViewProperty

@@ -8,6 +8,10 @@ Protected Class Crossword
 		id As ID
 	#tag EndProperty
 
+	#tag Property, Flags = &h0
+		solution() As Clue
+	#tag EndProperty
+
 
 	#tag ViewBehavior
 		#tag ViewProperty
