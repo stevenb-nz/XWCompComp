@@ -13,6 +13,7 @@ Window=GridInfoWindow;GridInfoWindow.xojo_window;&h000000007097D7FF;&h0000000000
 Class=DirectionArrow;DirectionArrow.xojo_code;&h000000007845F7FF;&h0000000000000000;false
 Class=Crossword;Crossword.xojo_code;&h000000005523B7FF;&h0000000000000000;false
 Class=ID;ID.xojo_code;&h000000000746F7FF;&h0000000000000000;false
+Class=Clue;Clue.xojo_code;&h00000000646FB7FF;&h0000000000000000;false
 DefaultWindow=MainWindow
 AppMenuBar=MainMenuBar
 MajorVersion=1
