@@ -24,7 +24,7 @@ Begin Window GridInfoWindow
    Placement       =   0
    Resizeable      =   True
    Title           =   "Grid Information"
-   Visible         =   True
+   Visible         =   False
    Width           =   300
    Begin Listbox InfoListbox
       AutoDeactivate  =   True

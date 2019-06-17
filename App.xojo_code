@@ -2,11 +2,29 @@
 Protected Class App
 Inherits Application
 	#tag Event
-		Sub Open()
-		  GridInfoWindow.Visible = false
+		Sub Close()
 		  
 		End Sub
 	#tag EndEvent
+
+	#tag Event
+		Sub EnableMenuItems()
+		  
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+
+
+	#tag Method, Flags = &h0
+		Sub addTables()
+		  
+		End Sub
+	#tag EndMethod
 
 
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
