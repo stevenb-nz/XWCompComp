@@ -3,6 +3,9 @@ Protected Class App
 Inherits Application
 	#tag Event
 		Sub Close()
+		  if xwDB <> nil then
+		    xwDB.Close
+		  end
 		  
 		End Sub
 	#tag EndEvent
@@ -15,6 +18,21 @@ Inherits Application
 
 	#tag Event
 		Sub Open()
+		  Dim tables As RecordSet
+		  
+		  xwDB = new SQLiteDatabase
+		  xwDB.DatabaseFile = SpecialFolder.Documents.Child("Crosswords.sqlite")
+		  if xwDB.CreateDatabaseFile then
+		    tables = xwDB.TableSchema
+		    If tables <> Nil Then
+		      if tables.eof then
+		        addTables
+		      end if
+		      tables.close
+		    End If
+		  else
+		    MsgBox "Something went wrong creating a new database file."
+		  end if
 		  
 		End Sub
 	#tag EndEvent
@@ -25,6 +43,11 @@ Inherits Application
 		  
 		End Sub
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		xwDB As SQLiteDatabase
+	#tag EndProperty
 
 
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
