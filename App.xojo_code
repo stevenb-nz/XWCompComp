@@ -40,6 +40,14 @@ Inherits Application
 
 	#tag Method, Flags = &h0
 		Sub addTables()
+		  'wordsDB.SQLExecute("CREATE TABLE Words (id Integer, Word VarChar NOT NULL, reversed VarChar, f_hook_of Integer, b_hook_of Integer, combo_id Integer, playability Integer, PRIMARY KEY(id));")
+		  'wordsDB.SQLExecute("CREATE TABLE Combos (id Integer, Combo VarChar NOT NULL, length Integer, frequency Integer, combo_playability Integer, PRIMARY KEY(id));")
+		  'wordsDB.SQLExecute("CREATE TABLE Quiz (id Integer, type VarChar, length Integer, states VarChar, current Integer, current_new Boolean, PRIMARY KEY(id));")
+		  'wordsDB.SQLExecute("CREATE TABLE Settings (id Integer, Setting VarChar NOT NULL, value VarChar, PRIMARY KEY(id));")
+		  'wordsDB.SQLExecute("CREATE UNIQUE INDEX Words_ix_Word ON Words (Word);")
+		  'wordsDB.SQLExecute("CREATE UNIQUE INDEX Combos_ix_Combo ON Combos (Combo);")
+		  '
+		  'wordsDB.Commit()
 		  
 		End Sub
 	#tag EndMethod
