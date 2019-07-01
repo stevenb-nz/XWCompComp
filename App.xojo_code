@@ -46,8 +46,13 @@ Inherits Application
 		  'wordsDB.SQLExecute("CREATE TABLE Settings (id Integer, Setting VarChar NOT NULL, value VarChar, PRIMARY KEY(id));")
 		  'wordsDB.SQLExecute("CREATE UNIQUE INDEX Words_ix_Word ON Words (Word);")
 		  'wordsDB.SQLExecute("CREATE UNIQUE INDEX Combos_ix_Combo ON Combos (Combo);")
-		  '
-		  'wordsDB.Commit()
+		  
+		  'xwDB.SQLExecute("CREATE TABLE grids (id Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE clues (id Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE crosswords (id Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE crossword_clues (id Integer, PRIMARY KEY(id));")
+		  
+		  xwDB.Commit()
 		  
 		End Sub
 	#tag EndMethod
