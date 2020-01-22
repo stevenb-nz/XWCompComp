@@ -47,11 +47,11 @@ Inherits Application
 		  'wordsDB.SQLExecute("CREATE UNIQUE INDEX Combos_ix_Combo ON Combos (Combo);")
 		  
 		  'xwDB.SQLExecute("CREATE TABLE Settings (id Integer, Setting VarChar NOT NULL, value VarChar, PRIMARY KEY(id));")
-		  'xwDB.SQLExecute("CREATE TABLE grids (id Integer, PRIMARY KEY(id));")
-		  'xwDB.SQLExecute("CREATE TABLE clues (id Integer, PRIMARY KEY(id));")
-		  'xwDB.SQLExecute("CREATE TABLE answers (id Integer, PRIMARY KEY(id));")
-		  'xwDB.SQLExecute("CREATE TABLE crosswords (id Integer, PRIMARY KEY(id));")
-		  'xwDB.SQLExecute("CREATE TABLE crossword_clues (id Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE grids (id Integer, lights VarChar, x Integer, y Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE clues (id Integer, clue VarChar, answer_id Integer, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE answers (id Integer, answer VarChar, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE crosswords (id Integer, series VarChar, series_number Integer, grid_id, PRIMARY KEY(id));")
+		  'xwDB.SQLExecute("CREATE TABLE crossword_clues (id Integer, crossword_id Integer, clue_id Integer, clue_number VarChar, PRIMARY KEY(id));")
 		  
 		  xwDB.Commit()
 		  
