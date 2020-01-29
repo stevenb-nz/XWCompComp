@@ -21,7 +21,7 @@ Inherits Application
 		  Dim tables As RecordSet
 		  
 		  xwDB = new SQLiteDatabase
-		  xwDB.DatabaseFile = SpecialFolder.Documents.Child("Crosswords.sqlite")
+		  xwDB.DatabaseFile = SpecialFolder.Documents.child("myDBs").Child("Crosswords.sqlite")
 		  if xwDB.CreateDatabaseFile then
 		    tables = xwDB.TableSchema
 		    If tables <> Nil Then
