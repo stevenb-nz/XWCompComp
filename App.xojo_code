@@ -6,6 +6,9 @@ Inherits Application
 		  if xwDB <> nil then
 		    xwDB.Close
 		  end
+		  if wordsDB <> nil then
+		    wordsDB.Close
+		  end
 		  
 		End Sub
 	#tag EndEvent
@@ -34,6 +37,12 @@ Inherits Application
 		    MsgBox "Something went wrong creating a new database file."
 		  end if
 		  
+		  wordsDB = new SQLiteDatabase
+		  wordsDB.DatabaseFile = SpecialFolder.Documents.child("myDBs").Child("Words.sqlite")
+		  if not wordsDB.CreateDatabaseFile then
+		    MsgBox "Error connecting to Words database."
+		  end
+		  
 		End Sub
 	#tag EndEvent
 
@@ -52,6 +61,10 @@ Inherits Application
 		End Sub
 	#tag EndMethod
 
+
+	#tag Property, Flags = &h0
+		wordsDB As SQLiteDatabase
+	#tag EndProperty
 
 	#tag Property, Flags = &h0
 		xwDB As SQLiteDatabase
