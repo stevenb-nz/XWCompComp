@@ -355,12 +355,54 @@ End
 		currentGrid As Grid
 	#tag EndProperty
 
+	#tag Property, Flags = &h0
+		modeComponent As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		modeNewEdit As Integer = 0
+	#tag EndProperty
+
 
 #tag EndWindowCode
 
+#tag Events modeRadioButton
+	#tag Event
+		Sub Action(index as Integer)
+		  modeComponent = index * 2
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events modeSegmentedControl
+	#tag Event
+		Sub Action(itemIndex as integer)
+		  modeNewEdit = itemIndex
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events okayButton
 	#tag Event
 		Sub Action()
+		  select case modeComponent+modeNewEdit
+		  case 0
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 1
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 2
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 3
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 4
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 5
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 6
+		    MsgBox str(modeComponent+modeNewEdit)
+		  case 7
+		    MsgBox str(modeComponent+modeNewEdit)
+		  end
 		  
 		End Sub
 	#tag EndEvent
