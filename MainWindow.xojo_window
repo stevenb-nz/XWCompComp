@@ -166,7 +166,7 @@ Begin Window MainWindow
       Top             =   20
       Transparent     =   False
       Visible         =   True
-      Width           =   104
+      Width           =   100
    End
    Begin PushButton PushButton1
       AutoDeactivate  =   True
@@ -198,7 +198,7 @@ Begin Window MainWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   104
    End
 End
 #tag EndWindow
