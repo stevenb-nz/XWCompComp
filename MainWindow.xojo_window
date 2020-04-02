@@ -168,7 +168,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   100
    End
-   Begin PushButton PushButton1
+   Begin PushButton okayButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   "0"
@@ -358,6 +358,13 @@ End
 
 #tag EndWindowCode
 
+#tag Events okayButton
+	#tag Event
+		Sub Action()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="Name"
