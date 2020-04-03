@@ -632,4 +632,16 @@ End
 		Type="Boolean"
 		EditorType="Boolean"
 	#tag EndViewProperty
+	#tag ViewProperty
+		Name="modeComponent"
+		Group="Behavior"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="modeNewEdit"
+		Group="Behavior"
+		InitialValue="0"
+		Type="Integer"
+	#tag EndViewProperty
 #tag EndViewBehavior
